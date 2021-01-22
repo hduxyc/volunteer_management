@@ -8,3 +8,4 @@ app = Flask(__name__,
 bootstrap = Bootstrap(app)
 
 from service.apis import *
+from service.views import *

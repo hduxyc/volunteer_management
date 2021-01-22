@@ -74,3 +74,27 @@ class VolunteerModel(object):
         else:
             has_next = 0
         return result, has_next
+
+    @staticmethod
+    def insert_cardid_records(name, class_no, sex, card_id, task, date, duration):
+        """
+        插入单条志愿者服务信息
+        :param name:
+        :param class_no:
+        :param sex:
+        :param card_id:
+        :param task:
+        :param date:
+        :param duration:
+        :return:
+        """
+        sql = f'''
+            INSERT INTO
+                volunteer_records(name, class_no, sex, card_id, task, date, duration)
+            VALUES 
+                ('{name}', '{class_no}', '{sex}', '{card_id}', '{task}', '{date}', '{duration}')
+        '''
+
+        row_id = db.insert(sql)
+        record = '录入成功'
+        return record, row_id
