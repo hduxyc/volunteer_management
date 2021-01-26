@@ -3,7 +3,7 @@ import logging
 
 
 class MySQLDB(object):
-    def __init__(self, host='bdm721867263.my3w.com', port=3306, user='bdm721867263', passwd='xx898916.', database='bdm721867263_db'):
+    def __init__(self, host='localhost', port=3306, user='root', passwd='x123456.', database='volunteer'):
         # cursorclass=pymysql.cursors.DictCursor 数据库查询返回dict字典 -- 默认：tuple元组
         self.conn = pymysql.connect(host=host,
                                     port=port,
@@ -57,4 +57,4 @@ class MySQLDB(object):
         return pymysql.converters.escape_string(_)
 
 
-db = MySQLDB(user='bdm721867263', passwd='xx898916.')
+db = MySQLDB(user='root', passwd='x123456')
